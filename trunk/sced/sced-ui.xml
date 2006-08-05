@@ -1,0 +1,131 @@
+<ui>
+  <menubar action="Menubar">
+    <menu action="FileMenu">
+      <menuitem action="New" />
+      <menuitem action="Open" />
+      <separator />
+      <menuitem action="Save" />
+      <menuitem action="SaveAs" />
+      <menuitem action="SaveCopy" />
+      <menuitem action="Revert" />
+      <separator />
+      
+      <!--
+      <menuitem action="PageSetup" />
+      <menuitem action="PrintPreview" />
+      <menuitem action="Print" />
+      -->
+      
+      <!-- FIXME: -->
+      <placeholder name="RecentFiles">
+        <separator name="RecentSeparator" />
+        <menuitem action="RecentMenu">    
+        </menuitem>
+      </placeholder>
+      
+      <separator />
+      <menuitem action="Close" />
+      <menuitem action="Quit" />
+    </menu>
+    <menu action="EditMenu">
+      <menuitem action="Undo" />
+      <menuitem action="Redo" />
+      <separator />
+      <menuitem action="Cut" />
+      <menuitem action="Copy" />
+      <menuitem action="Paste" />
+      <menuitem action="Delete" />
+      <separator />
+      <menuitem action="SelectAll" />
+      <menuitem action="SelectBlock" />
+      <!--menuitem action="DeselectAll"/-->
+      <separator />
+      <menuitem action="Comment" />
+      <menuitem action="Uncomment" />
+      <separator />
+      <menuitem action="Indent" />
+      <menuitem action="Unindent" />
+      <separator />
+      <menuitem action="Preferences" />
+    </menu>
+    <menu action="ViewMenu">
+      <menuitem action="ViewToolbar" />
+      <menuitem action="ViewStatusbar" />
+      <menuitem action="ViewLog" />
+      <separator />
+      <placeholder name="HighlightMode">
+      </placeholder>
+    </menu>
+    <menu action="SearchMenu">
+      <menuitem action="Find" />
+      <menuitem action="FindNext" />
+      <menuitem action="FindPrevious" />
+      <menuitem action="Replace" />
+      <separator />
+      <menuitem action="GotoLine" />
+    </menu>
+    <menu action="LanguageMenu">
+      <menuitem action="Evaluate" />
+      <menuitem action="EvaluateAll" />
+      <separator />
+      <!--
+      <menuitem action="RecompileLibrary" />
+      -->
+      <menuitem action="RestartLang" />
+      <separator />
+      <menuitem action="ClearLog" />
+    </menu>
+    <menu action="ServerMenu">
+      <menuitem action="StartServer" />
+      <menuitem action="StopServer" />
+      <separator />
+      <menuitem action="Record" />
+      <separator />
+      <menuitem action="StopSound" />
+    </menu>
+    <!--
+    <menu action="DocumentsMenu">
+      <menuitem action="SaveAll" />
+      <menuitem action="CloseAll" />
+      <separator />
+      <placeholder name="Documents">
+        <separator />
+      </placeholder>
+    </menu>
+    -->
+    <menu action="HelpMenu">
+      <!--menuitem action="Help" --/>
+      <!-- FIXME: better name 
+      <menuitem action="FindReference" />
+      -->
+      <separator />
+      <menuitem action="About" />
+    </menu>
+  </menubar>
+  <toolbar action="Toolbar">
+    <toolitem action="New" />
+    <toolitem action="Open">
+      <!-- FIXME: add recent files here as well -->
+    </toolitem>
+    <toolitem action="Save" />
+    <separator />
+    <!--
+    <toolitem action="Print" />
+    -->
+    <separator />
+    <toolitem action="Undo" />
+    <toolitem action="Redo" />
+    <separator />
+    <toolitem action="Cut" />
+    <toolitem action="Copy" />
+    <toolitem action="Paste" />
+    <separator />
+    <toolitem action="Find" />
+    <toolitem action="Replace" />
+    <separator />
+    <toolitem action="EvaluateAll" />
+    <separator />
+    <toolitem action="StopSound" />
+    <toolitem action="Record" />
+  </toolbar>
+</ui>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+
+<language _name="SuperCollider" version="1.0" _section="Scripts" mimetypes="text/x-sc">
+	<line-comment _name="Line Comment" style="Comment">
+		<start-regex>//</start-regex>
+	</line-comment>
+	
+	<!-- unfortunately this one won't work with nested comments -->
+	<block-comment _name="Block Comment" style="Comment">
+		<start-regex>/\*</start-regex>
+        	<end-regex>\*/</end-regex>
+	</block-comment>
+	
+	<!-- starting \b in the regexes dims the "-" sign -->
+	<keyword-list _name = "Pi" style = "Decimal">
+		<keyword>pi</keyword>
+	</keyword-list>
+	
+	<pattern-item _name = "Number" style = "Decimal">
+		<regex>\b(\-?)([0-9]+)(\.[0-9]+)?(pi)?\b</regex>
+	</pattern-item>
+	
+	<!-- the "-" (in some cases) can be placed before and after 'r' (both mean negative) -->
+	<pattern-item _name = "Base-N Number" style = "Decimal">
+		<regex>\b(\-?)([0-9]+[rR]{1,1})((\-?)[0-9A-Za-z\.]*)(pi)?\b</regex>
+	</pattern-item>
+	
+	<!-- exponential notation supports only digits (not letters) after the "e" sign -->
+	<pattern-item _name = "Exponential Notation Number" style = "Decimal">
+		<regex>\b(\-?)([0-9]+)(\.[0-9]+)?e(\-?)([0-9]+)(pi)?\b</regex>
+	</pattern-item>
+	
+	<!-- FIXME: make it a choice: either "." or \ followed by oneof: t, n, etc. -->
+	<pattern-item _name="Character" style="Character">
+		<regex>\$(\\?).</regex>
+	</pattern-item>
+	
+	<!-- symbols and strings -->
+	<string _name="Symbol" style="String" end-at-line-end="True">
+		<start-regex>&apos;</start-regex>
+		<end-regex>&apos;</end-regex>
+	</string>
+	
+	<pattern-item _name = "Symbol 2" style = "String">
+		<regex>\\[a-zA-Z0-9_]+\b</regex>
+	</pattern-item>
+	
+	<string _name="String" style="String">
+		<start-regex>&quot;</start-regex>
+		<end-regex>&quot;</end-regex>
+	</string>
+	
+	<!-- classes -->
+	<pattern-item _name = "Class" style = "Others 2">
+		<regex>\b[A-Z][A-Za-z0-9_]*\b</regex>
+	</pattern-item>
+	
+	<keyword-list _name = "Builtins" style = "Function">
+		<!-- unary ops -->
+		<keyword>neg</keyword>
+		<keyword>reciprocal</keyword>
+		<keyword>abs</keyword>
+		<keyword>floor</keyword>
+		<keyword>ceil</keyword>
+		<keyword>frac</keyword>
+		<keyword>sign</keyword>
+		<keyword>squared</keyword>
+		<keyword>cubed</keyword>
+		<keyword>sqrt</keyword>
+		<keyword>exp</keyword>
+		<keyword>midicps</keyword>
+		<keyword>cpsmidi</keyword>
+		<keyword>midiratio</keyword>
+		<keyword>ratiomidi</keyword>
+		<keyword>dbamp</keyword>
+		<keyword>ampdb</keyword>
+		<keyword>octcps</keyword>
+		<keyword>cpsoct</keyword>
+		<keyword>log</keyword>
+		<keyword>log2</keyword>
+		<keyword>log10</keyword>
+		<keyword>sin</keyword>
+		<keyword>cos</keyword>
+		<keyword>tan</keyword>
+		<keyword>asin</keyword>
+		<keyword>acos</keyword>
+		<keyword>atan</keyword>
+		<keyword>sinh</keyword>
+		<keyword>cosh</keyword>
+		<keyword>tanh</keyword>
+		<keyword>distort</keyword>
+		<keyword>softclip</keyword>
+		<keyword>isPositive</keyword>
+		<keyword>isNegative</keyword>
+		<keyword>isStrictlyPositive</keyword>
+		
+		<!-- binary ops -->
+		<keyword>min</keyword>
+		<keyword>max</keyword>
+		<keyword>round</keyword>
+		<keyword>trunc</keyword>
+		<keyword>atan2</keyword>
+		<keyword>hypot</keyword>
+		<keyword>hypotApx</keyword>
+		<keyword>ring1</keyword>
+		<keyword>ring2</keyword>
+		<keyword>ring3</keyword>
+		<keyword>ring4</keyword>
+		<keyword>sumsqr</keyword>
+		<keyword>difsqr</keyword>
+		<keyword>sqrsum</keyword>
+		<keyword>sqrdif</keyword>
+		<keyword>absdif</keyword>
+		<keyword>thresh</keyword>
+		<keyword>amclip</keyword>
+		<keyword>scaleneg</keyword>
+		<keyword>clip2</keyword>
+		<keyword>wrap2</keyword>
+		<keyword>fold2</keyword>
+		<keyword>excess</keyword>
+	</keyword-list>
+	
+	<!-- other keywords -->
+	<keyword-list _name="Reserved Words" style="Data Type">
+		<keyword>inf</keyword>
+		<keyword>nil</keyword>
+		<keyword>true</keyword>
+		<keyword>false</keyword>
+	</keyword-list>
+	
+	<keyword-list _name = "Keywords" style = "Keyword">
+		<keyword>var</keyword>
+		<keyword>arg</keyword>
+		<keyword>classvar</keyword>
+	</keyword-list>
+	
+	<keyword-list _name = "Control Operators" style = "Keyword">
+		<keyword>if</keyword>
+		<keyword>while</keyword>
+		<keyword>for</keyword>
+		<keyword>forBy</keyword>
+		<keyword>do</keyword>
+		<keyword>switch</keyword>
+		<keyword>case</keyword>
+	</keyword-list>
+	
+	<keyword-list _name = "Pseudo Variables" style = "Data Type">
+		<keyword>this</keyword>
+		<keyword>super</keyword>
+		<keyword>thisProcess</keyword>
+		<keyword>thisFunction</keyword>
+		<keyword>thisMethod</keyword>
+		<keyword>thisFunctionDef</keyword>
+		<keyword>thisThread</keyword>
+	</keyword-list>
+</language>
